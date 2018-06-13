@@ -1,22 +1,22 @@
 function fplot
 clear all, close all
 
-flag_data = 4;                     % 1-current, 2-current max, 3-final choice
+flag_data = 2;                     % 1-current, 2-current max, 3-final choice
 flag_report = 1;                   % 0-check analysis, 1-format for report
 
 if flag_data==1
-    load dataplot_current
+    load dataplot_original
 elseif flag_data==2
-    load dataplot_currentmax
+    load dataplot_currentmaxv2
 elseif flag_data==3
     load dataplot_finalchoice
 elseif flag_data==4
     load dataplot_finalchoice_composite
 end
-
-u_DS0 = {'CF Com','CF Eco','CF Edu','CF Foo','CF Gov','CF Hea','CF Hou', ...
-    'CF Nur','CF Pop','CF Tra','PM Eng','PM Nat','PR Pre','PV Dep','PV Ine', ...
-    'PV Vul','SC Soc'};
+% 
+% u_DS0 = {'CF Com','CF Eco','CF Edu','CF Foo','CF Gov','CF Hea','CF Hou', ...
+%     'CF Nur','CF Pop','CF Tra','PM Eng','PM Nat','PR Pre','PV Dep','PV Ine', ...
+%     'PV Vul','SC Soc'};
 
 cmap  = colormap(parula);
 nCmapUpper = 10;                                   % adjust upper part of cmap
@@ -27,7 +27,7 @@ cmap  = [
     interp1(1:nCmapUpper,cmap(64-nCmapUpper+1:end,:),1:0.25:nCmapUpper)
     ];
 
-for j0=1:17                                       % for each current subdomain
+for j0=1:length(u_DS0)                                       % for each current subdomain
     clear ID mea_domain covmatrix corre Id_signs
     mea_domain = dataplot {j0};
     CAlast     = CA_plot{j0};
@@ -51,7 +51,7 @@ for j0=1:17                                       % for each current subdomain
         set(gca,'xtick',[1:num]),set(gca,'xticklabel',Letters(1:num),'Fontsize',16);% xtick as A B C D...
         set(gca,'ytick',[1:num]),set(gca,'yticklabel',Letters(1:num),'Fontsize',16);% ytick as A B C D...
         
-        title(sprintf('Pair-wise correlations\n'),'Fontsize',20)  
+        title(sprintf('Pair-wise correlations'),'Fontsize',20)  
        
         subplot(1,2,2)                                                        % subplot(1,2,2)
         [~, AX, ~, ~, ~] = plotmatrix(mea_domain);                            % ax of figure

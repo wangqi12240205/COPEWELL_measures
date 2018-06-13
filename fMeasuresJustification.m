@@ -19,10 +19,10 @@ end
 
 n0 = length(measureList.subdomain);
 for i0=1:n0                                       % for each current measure
-    DS0(i0,:)  = char([ measureList{i0,3}{1}(1:2) ' ' measureList{i0,4}{1}(1:3) ]); % domain/subdomain abbreviation
+    DS0(i0,:)  = string([ measureList{i0,3}{1}(1:2) ' ' measureList{i0,4}{1}(1:3) ]); % domain/subdomain abbreviation
     ttl0{i0}   = measureList{i0,2}{1};                   % measure title
 end
-[ u_DS0,~,iu0 ] = unique(DS0,'rows','stable');             % 17 domains/subdomains
+[ u_DS0,~,iu0 ] = unique(DS0,'stable');             % 17 domains/subdomains
 
 direc0 = strcmp(measureList.direction, '-');% positive or negative
 direc0 = direc0';
