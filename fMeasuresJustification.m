@@ -9,11 +9,12 @@ Dat0 = rawdata{:,2:end};
 Dat = readtable('measures_current2015.csv', 'ReadVariableNames',true);
 Dat = Dat{:,2:end};
 
-measureList = readtable('list_2018_06_05.txt');
+measureList = readtable('list_2018_06_05.csv');
 [subdomains, ia, ic] = unique(measureList.subdomain,'stable');
 m0 = length(subdomains); % num subdomain
 for j0=1:m0                                       % for each subdomain
     I_DS0{j0} = find(ic==j0);                    % get measures
+    n_DS0(j0) = length(I_DS0{j0});                % number
 end
 % I_DS0 % coresponding measures col
 
@@ -28,8 +29,8 @@ direc0 = strcmp(measureList.direction, '-');% positive or negative
 direc0 = direc0';
 Direc0 = zeros(size(direc0));               % change or not
 
+%% Choose optimal measures 
 flag.maxdirec = 1;
-
 for tempDiret= 0:1
     flag.Direc0 = tempDiret;
     if flag.maxdirec
@@ -88,6 +89,52 @@ for tempDiret= 0:1
 end
 keyboard
 
+%% Factor loading
+%----------------------------------------------------------------------------------------------
+% CFA
+%----------------------------------------------------------------------------------------------
+fprintf('\nCFA of original measures\n')
+for j0=1:m0                                           % for each current subdomain
+    if n_DS0(j0)>1                                    % if at least two measures
+        Is0   = I_DS0{j0};                            % collect the measures in DS0
+        CX    = nancov(Dat0(:,Is0));                  % get the covariance
+        lam   = fCFA( CX );                           % get the loadings
+%         lam   = lam/(0.5/3);                          % scale to 1
+        lam   = lam/(sum(abs(lam)));                  % scale to 1
+        CA    = fCAlpha(Dat0(:,Is0),Direc0max(Is0));  % default Cronbach's alpha
+        fprintf('\n%s (%.2f)\n',u_DS0(j0,:),CA)
+%         lam =  lam*sign(lam(1));
+        [~, maxlam_indx] = max(abs(lam));
+        lam =  lam*sign(lam(maxlam_indx));
+        for I0=1:n_DS0(j0)
+            i0 = Is0(I0);
+%             if strcmp(Signs0(i0),'-'), lam(I0) = -lam(I0); end 
+            fprintf('  %s (%s) %5.2f %s\n',Signs0(i0),Signs(i0),lam(I0),ttl0{i0})
+        end
+        LAM{j0} = lam;
+        
+    end
+end
+
+keyboard
+
+%% Choose core subsets
+for j0=1:m0                                           % for each current subdomain
+    if n_DS0(j0)>1                                    % if at least two measures
+        lam = LAM{j0};
+        core_measures_index{j0} = [];
+        Is0   = I_DS0{j0}; 
+        for I0=1:n_DS0(j0)
+            i0 = Is0(I0);
+            if strcmp(Signs0(i0), Signs(i0)) & abs(lam(I0)) > 0.15
+                core_measures_index{j0} = [core_measures_index{j0} I0];
+            end
+        end
+        
+    end
+end
+
+keyboard
 
 
 

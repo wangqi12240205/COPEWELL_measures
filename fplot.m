@@ -1,7 +1,7 @@
 function fplot
 clear all, close all
 
-flag_data = 2;                     % 1-current, 2-current max, 3-final choice
+flag_data = 1;                     % 1-current, 2-current max, 3-final choice
 flag_report = 1;                   % 0-check analysis, 1-format for report
 
 if flag_data==1

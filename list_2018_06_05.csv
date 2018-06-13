@@ -1,0 +1,39 @@
+id,description,domain,subdomain,direction
+1,Communication: Percent population with a telephone (positive effect),CF,Communication,+
+2,Number of radio stations per 1000 persons,CF,Communication,+
+3,% households with internet service,CF,Communication,+
+4,Civilian populations 16 years and over in labor force employed per 1000 persons,CF,Economy,+
+5,Number of business establishments per 1000 persons,CF,Economy,+
+6,Ratio of banking companies per 10k population,CF,Economy,+
+7,Median household income,CF,Economy,+
+8,Ratio of employers to 10k population,CF,Economy,+
+9,Education: Ratio of the pct. population with college education to the pct. population with no high school diploma,CF,Education,+
+10,Number of colleges universities and professional schools per 1000 persons,CF,Education,+
+11,Pupil/teacher ratio (public schools),CF,Education,-
+12,Food Environment Index - Includes Limited access to healthy foods (the percentage of the population that is low income and does not live close to a grocery store) and Food insecurity (percentage of the population who did not have access to a reliable source of food during the past year),CF,Food and Water,+
+13,% population served by public water systems in violation of safe standards,CF,Food and Water,-
+14,Population employed as fire fighting  prevention or law enforcement workers (per 1000 persons),CF,Government,+
+15,Number of Violent crimes,CF,Government,-
+16,Number of property crimes,CF,Government,-
+33,All cause mortality per 100000 population,CF,Healthcare and Public Health,-
+17,Number of physicians per 10000 population,CF,Healthcare and Public Health,+
+18,Number of hospital beds per 10000 population,CF,Healthcare and Public Health,+
+19,% of women aged 67-69 on Medicare with a timely mammogram,CF,Healthcare and Public Health,+
+20,% of population with health insurance,CF,Healthcare and Public Health,+
+21,Mental health providers -í_í_ratio of the county population to the number of mental health providers,CF,Healthcare and Public Health,+
+22,Crowding (percentage of total occupied housing units/households with more than one person per room),CF,Housing,-
+23,Housing: Percent homeownership (positive effect),CF,Housing,+
+24,% Severe housing problems - housing unit lacks complete kitchen facilities;housing unit lacks complete plumbing facilities;household is severely overcrowded; orhousehold is severely cost burdened.,CF,Housing,-
+25,Population employed in community and social services ( per 1000 persons),CF,Nurturing and Care,+
+26,Number of nursing homes per 10000 population,CF,Nurturing and Care,+
+27,Recreational centers and sport organizations,CF,Well Being,+
+28,% of adults who report self-rated health as 'excellent' 'very good' or 'good',CF,Well Being,+
+29,Suicide Mortality,CF,Well Being,-
+30,Drug Mortality,CF,Well Being,-
+31,Poor Physical Health days - for how many days during the past 30 days was your physical health not good?,CF,Well Being,-
+32,Poor Mental Health days,CF,Well Being,-
+36,Number of newspaper publishers per 1000 people,CF,Communication,+
+37,Number of television broadcasting per 1000 persons,CF,Communication,+
+38,% households served by public water systems,CF,Food and Water,+
+40,% of individuals on Medicare aged 65-75 with a diabetes diagnosis,CF,Healthcare and Public Health,-
+41,Number of ambulances per 1000 persons,CF,Healthcare and Public Health,+
