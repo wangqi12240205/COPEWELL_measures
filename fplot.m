@@ -86,13 +86,18 @@ for j0=1:length(u_DS0)                                       % for each current 
             end
         end
         if flag_data==1
-    print(['figure_original/' fig.Name],'-djpeg','-r100')
+%     print(['figure_original/' fig.Name],'-djpeg','-r100')
+        saveas(gcf,['figure_original/' fig.Name '.fig'])
+
 elseif flag_data==2
-     print(['figure_maxcurrent/' fig.Name],'-djpeg','-r100')
+%      print(['figure_maxcurrent/' fig.Name],'-djpeg','-r100')
+saveas(gcf,['figure_maxcurrent/' fig.Name '.fig'])
 elseif flag_data==3
-    print(['figure_finalchoice/' fig.Name],'-djpeg','-r100')
+%     print(['figure_finalchoice/' fig.Name],'-djpeg','-r100')
+saveas(gcf,['figure_finalchoice/' fig.Name '.fig'])
     elseif flag_data==4
-    print(['figure_finalchoice_composite/' fig.Name],'-djpeg','-r100')
+%     print(['figure_finalchoice_composite/' fig.Name],'-djpeg','-r100')
+saveas(gcf,['figure_finalchoice_composite/' fig.Name '.fig'])
 end
     end
     
