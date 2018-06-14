@@ -247,6 +247,8 @@ for j0=1:m0                                           % for each current subdoma
     
     
     
+    
+    
     %
     %
     %     if (sum(Direc0max(Is0)) > length(direc0(Is0)) / 2)
