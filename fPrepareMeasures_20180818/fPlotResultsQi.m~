@@ -56,13 +56,15 @@ for i=1:nSubdomains                              % for each measure
         figure(300+i), fig = gcf; fig.Name = sprintf('%s',u_DS0(i,:));
         fig.Position(3) = 1000;
         fig.Position(4) = 800;
-    
+        
+        
+            
         
         subplot(2,1,1)                           % plot showing + and - and not selected
         imagesc(imagescData),hold on, ax = gca;
-        temp = sort(unique(imagescData));
+        unique(imagescData
         cmap = [0.3, 0.3, 0.3; 1, 1, 1; 0.3, 0.3, 0.3];
-        cmap = cmap(temp + 2,:);
+        cmap = cmap();
         colormap(cmap);
         for ii = 1:nMeasures
             for jj = 1:nResults

@@ -299,7 +299,7 @@ for j0=1:m0
     ttlSaved{j0} = temp;
 end
 
-save('fPrepareMeasuresQiResults_180620','u_DS0','includedsSaved','CAsSaved','ttlSaved')
+save('fPrepareMeasuresQiResults_180620','u_DS0','includedsSaved','SignsSaved','CAsSaved','ttlSaved')
 keyboard
 
 
