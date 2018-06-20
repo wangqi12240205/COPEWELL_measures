@@ -215,7 +215,7 @@ for j0=1:m0                                           % for each current subdoma
     SIGNS_optimal{j0} = Signs_temp;
     includeSavedtemp = includeSavedtemp(:, sortCA_idx(1:min(nc, 20)));
     %     includeSavedtemp = [ones(length(index),min(nc, 20));includeSavedtemp];
-    includedsSaved{j0} = includeSavedtemp;
+    includeSaved{j0} = includeSavedtemp;
     
     Signs_temp = Signs_temp(:, sortCA_idx(1:min(nc, 20)));
     SignsSaved{j0} = Signs_temp;
@@ -282,24 +282,25 @@ for j0=1:m0                                           % for each current subdoma
 end
 
 for j0=1:m0  
-    [numrow, numcol] = size(includedsSaved{j0});
-    temp = includedsSaved{j0};
+    [numrow, numcol] = size(includeSaved{j0});
+    temp = includeSaved{j0};
     temp = [ones(length(core_measures_index{j0}),numcol);temp];
     indexorigin = [core_measures_index{j0}  non_core_index{j0}'];
     [orderedindex, order] = sort(indexorigin);
     temp(1:length(indexorigin),:) = temp(order,:);
-    includedsSaved{j0} = temp;
+    includeSaved{j0} = temp;
     
     temp = SignsSaved{j0};
     temp = [direc0(:,core_measures_index{j0})' * ones(1,numcol) ;temp];
     temp(1:length(indexorigin),:) = temp(order,:);
     SignsSaved{j0} = temp;
     
-    temp = [ttl0(orderedindex)'; measureList_c.description(cur_index{j0})];
+    temp = [ttl0(orderedindex);
+    measureList_c.description(cur_index{j0})
+    temp{length(indexorigin)+1:sum(cur_index{j0})} = ;
     ttlSaved{j0} = temp;
 end
 
-save('fPrepareMeasuresQiResults_180620','u_DS0','includedsSaved','CAsSaved','ttlSaved')
 keyboard
 
 
