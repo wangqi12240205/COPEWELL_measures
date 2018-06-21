@@ -17,7 +17,7 @@ end
 % ttlSaved{6}{8} = 'C: % Leisure-time Physical Inactivity Prevalence';
 
  sub_change	= [2 4 6 7 8 9 10 11 14 16 17];
-% load ttl0
+ load ttl0
 flag.report = 1;                                 % 1-format for the report, 0-for analysis
 datalist  = readtable('list_2016_12_13.csv');
 direction = datalist.direction;
