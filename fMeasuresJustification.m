@@ -295,7 +295,7 @@ for j0=1:m0
     temp(1:length(indexorigin),:) = temp(order,:);
     SignsSaved{j0} = temp;
     
-    temp = [ttl0(orderedindex)'; measureList_c.description(cur_index{j0})];
+    temp = [strcat('N: ',ttl0(orderedindex)'); strcat('C: ',measureList_c.description(cur_index{j0}))];
     ttlSaved{j0} = temp;
 end
 
