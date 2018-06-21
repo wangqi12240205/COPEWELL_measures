@@ -4,7 +4,7 @@ function fPlotResultsQi
 %----------------------------------------------------------------------------------------------
 flag_use_composites = 1;                         % 1-use composite measures, 0-don't
 if flag_use_composites
-	load('../fPrepareMeasuresQiResults_180620.mat')
+	load('fPrepareMeasuresQiResults_180620.mat')
 	combination = [2 1 18 1 2 1 2 2 2 2 1];
 else
 	load fPrepareMeasuresQiResults_no_composites
@@ -24,24 +24,24 @@ direction = datalist.direction;
 nSubdomains = length(CAsSaved);                  % number of subdomains
 
 
-for mm = 1:nSubdomains
-    textsubdomain = ttlSaved{mm};
-    for k = 1:length(textsubdomain)
-        texttemp = textsubdomain{k};
-        textsplit = textscan(texttemp,'%s','Delimiter',':');
-        if (textsplit{1}{1} == 'C')
-            [~,jlength] = size(SignsSaved{mm});
-            for j = 1:jlength
-            if (SignsSaved{mm}(k,j) == 1)            
-                SignsSaved{mm}(k,j) = direction{find(strcmp(textsplit{1}{2},ttl0))} == '+';
-            else
-                SignsSaved{mm}(k,j) = direction{find(strcmp(textsplit{1}{2},ttl0))} == '-';
-            end
-            end
-        end
-    end
-    
-end
+% for mm = 1:nSubdomains
+%     textsubdomain = ttlSaved{mm};
+%     for k = 1:length(textsubdomain)
+%         texttemp = textsubdomain{k};
+%         textsplit = textscan(texttemp,'%s','Delimiter',':');
+%         if (textsplit{1}{1} == 'N')
+%             [~,jlength] = size(SignsSaved{mm});
+%             for j = 1:jlength
+%             if (SignsSaved{mm}(k,j) == 1)            
+%                 SignsSaved{mm}(k,j) = direction{find(strcmp(textsplit{1,1}{2,1},ttl0))} == '+';
+%             else
+%                 SignsSaved{mm}(k,j) = direction{find(strcmp(textsplit{1,1}{2,1},ttl0))} == '-';
+%             end
+%             end
+%         end
+%     end
+%     
+% end
 
 for i=1:nSubdomains                              % for each measure
     nResults = length(CAsSaved{i});              % number of results
