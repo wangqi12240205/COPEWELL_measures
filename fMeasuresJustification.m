@@ -100,8 +100,8 @@ for j0=1:m0                                           % for each current subdoma
         Is0   = I_DS0{j0};                            % collect the measures in DS0
         CX    = nancov(Dat0(:,Is0));                  % get the covariance
         lam   = fCFA( CX );                           % get the loadings
-        %         lam   = lam/(0.5/3);                          % scale to 1
-        lam   = lam/(sum(abs(lam)));                  % scale to 1
+        lam   = lam/(0.5/3);                          % scale to 1
+%         lam   = lam/(sum(abs(lam)));                % scale to 1
         CA    = fCAlpha(Dat0(:,Is0),Direc0max(Is0));  % default Cronbach's alpha
         fprintf('\n%s (%.2f)\n',u_DS0(j0,:),CA)
         %         lam =  lam*sign(lam(1));
@@ -125,14 +125,24 @@ for j0=1:m0                                           % for each current subdoma
         lam = LAM{j0};
         core_measures_index{j0} = [];
         Is0   = I_DS0{j0};
-        for I0=1:n_DS0(j0)
-            i0 = Is0(I0);
-            if strcmp(Signs0(i0), Signs(i0)) & abs(lam(I0)) > 0.15
-                core_measures_index{j0} = [core_measures_index{j0} Is0(I0)];
+        if n_DS0(j0) ==2
+            for I0=1:n_DS0(j0)
+                i0 = Is0(I0);
+                if strcmp(Signs0(i0), Signs(i0))
+                    core_measures_index{j0} = [core_measures_index{j0} Is0(I0)];
+                end
+            end
+        else
+            for I0=1:n_DS0(j0)
+                i0 = Is0(I0);
+%                 if strcmp(Signs0(i0), Signs(i0)) & abs(lam(I0)) > min(0.2,1/n_DS0(j0))
+                if strcmp(Signs0(i0), Signs(i0)) & abs(lam(I0)) > 0.19
+                    core_measures_index{j0} = [core_measures_index{j0} Is0(I0)];
+                end
             end
         end
-        
     end
+    
 end
 
 
