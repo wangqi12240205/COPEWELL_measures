@@ -1,0 +1,34 @@
+id,description,domain,subdomain,direction,source
+107,% Ninth graders who graduate in four years (high school graduation rate),CF,Education,+,EDFacts (CHR)
+11,# grocery stores per 10k pop,CF,Food and Water,+,"Census, CBP"
+12,# grocery stores per 100 square mile,CF,Food and Water,+,"Census, CBP"
+68,"% Households, no car & > 1 mile to grocery store",CF,Food and Water,-,"USDA, ERS, Food Environment Atlas "
+15,Per capita federal government spending ($1k),CF,Government,+,"USDA, ERS, Federal Funds"
+106,"% households has 1 or more of the 4 housing unit problems (lacks kitchen or plumbing, more than 1 person per room, or cost burden greater than 30%)",CF,Housing,-,"HUD, CHAS"
+21,# house units per capita,CF,Housing,+,Census
+108,# of mental health care providers per 10k pop,CF,Healthcare Delivery and Public Health Services,+,CMS (CHR)
+26,% uninsured adults in age group 16 to 64,CF,Healthcare Delivery and Public Health Services,-,"Census, SAHIE"
+104,% adults who are current smokers,CF,Healthcare Delivery and Public Health Services,-,BRFSS (CHR)
+105,% Leisure-time Physical Inactivity Prevalence,CF,Healthcare Delivery and Public Health Services,-,"CDC, Diabetes"
+38,% pop walk or cycle to work,CF,Transportation,+,"Census, ACS"
+44,Average Life expectency,CF,Population Well being,+,GHDx
+103, % Adults with frequent mental distress,CF,Population Well being,-,BRFSS (CHR)
+101,Distance to the nearest coast (1000 miles),PM,Natural Systems,+,NOAA
+51,% bridges with structural deficiencies,PM,Engineered Systems,-,FHWA
+48,Average age of housing stock,PM,Engineered Systems,-,"Census, ACS"
+49,% housing units that are not mobile homes,PM,Engineered Systems,+,"Census, ACS"
+55,% children in pop (below 18),PVID,Vulnerability,-,"Census, ACS"
+56,% elderlies in pop (65 and older),PVID,Vulnerability,-,"Census, ACS"
+57,% pop in institutions,PVID,Vulnerability,-,"Census, Summary File"
+60,% with a disability in civilian noninstitutionalized population,PVID,Vulnerability,-,"Census, ACS"
+63,Gini index of income inequality,PVID,Inequality,-,"Census, ACS"
+64,% pop (18 to 24 years) with less than high school education,PVID,Deprivation,-,"Census, ACS"
+65,% pop (16 years and over) not in the labor force,PVID,Deprivation,-,"Census, ACS"
+66,% children in poverty,PVID,Deprivation,-,"Census, ACS"
+67,% civilian in labor force but unemployed,PVID,Deprivation,-,"Census, ACS"
+69,% household on public assistance and food stamps,PVID,Deprivation,-,"Census, ACS"
+73,% pop who use carpool to work,SC,Social Cohesion,+,"Census, ACS"
+74,% pop affiliated with religious group,SC,Social Cohesion,+,U.S. Religion Census
+75,# Religious Organizations per 100 square mile,SC,Social Cohesion,+,"Census, CBP"
+78,# social advocacy organizations per 10k pop,SC,Social Cohesion,+,"Census, CBP"
+102,Total number of FEMA events from 1986-2015,PR,Preparedness,+,FEMA

@@ -5,7 +5,7 @@ function fPlotResultsQi
 flag_use_composites = 1;                         % 1-use composite measures, 0-don't
 if flag_use_composites
 	load('fPrepareMeasuresQiResults_180620.mat')
-	combination = [2 1 18 1 2 1 2 2 2 2 1];
+	combination = [1 1 1 2 1 1 2];
 else
 	load fPrepareMeasuresQiResults_no_composites
 	combination = [2 1 18 1 2 1 2 2 1 2 1];
@@ -16,7 +16,8 @@ end
 % end
 % ttlSaved{6}{8} = 'C: % Leisure-time Physical Inactivity Prevalence';
 
- sub_change	= [2 4 6 7 8 9 10 11 14 16 17];
+%  sub_change	= [2 4 6 7 8 9 10 11 14 16 17];
+sub_change	= 1:length(u_DS0);
 % load ttl0
 flag.report = 1;                                 % 1-format for the report, 0-for analysis
 datalist  = readtable('list_2016_12_13.csv');
@@ -114,7 +115,7 @@ for i=1:nSubdomains                              % for each measure
         ax.Position(3) = ax_length;
         ax.Position(2) = ax.Position(2) + 0.18;
         xlim([0,nResults]+0.5)
-        ylim([0.3 1])
+        ylim([0.1 1])
         ylabel('                                Cronbach''s alpha')
         set(get(gca,'ylabel'),'rotation',0)
         ax.YAxisLocation = 'right';              % put labels on the right side

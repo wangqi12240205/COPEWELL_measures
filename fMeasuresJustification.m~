@@ -150,7 +150,7 @@ end
 % keyboard
 
 %% Combine with the current measures
-measureList_c = readtable('list_2016_12_13.csv');
+measureList_c = readtable('list_2016_12_13_deleteduplicate.csv');
 direct0_current = strcmp(measureList_c.direction, '-');
 for j0=1:m0                                           % for each current subdomain
     non_core_index{j0} = setdiff(I_DS0{j0},core_measures_index{j0});
@@ -169,8 +169,8 @@ for j0=1:m0                                           % for each current subdoma
         minchoose = 1;
         count = 1;
         index = find(temp);
-        data_noncore = Dat(:,non_core_index{j0});
-        data_current = Dat0(:,index);
+        data_noncore = Dat0(:,non_core_index{j0});
+        data_current = Dat(:,index);
         data_all = [data_noncore data_current];
         signs_noncore = direc0(:,non_core_index{j0});
         signs_current = direct0_current(index);
@@ -186,8 +186,8 @@ for j0=1:m0                                           % for each current subdoma
         minchoose = 2;
         count = 0;
         index = find(temp);
-        data_noncore = Dat(:,non_core_index{j0});
-        data_current = Dat0(:,index);
+        data_noncore = Dat0(:,non_core_index{j0});
+        data_current = Dat(:,index);
         data_all = [data_noncore data_current];
         signs_noncore = direc0(:,non_core_index{j0});
         signs_current = direct0_current(index);
