@@ -1,8 +1,9 @@
 function fplot
 clear all, close all
 
-flag_data = 1;                     % 1-current, 2-current max, 3-final choice
-flag_report = 1;                   % 0-check analysis, 1-format for report
+flag_data = 3;                     % 1-current, 2-current max, 3-final choice
+flag_report = 0;                   % 0-check analysis, 1-format for report
+
 
 if flag_data==1
     load dataplot_original
@@ -10,8 +11,6 @@ elseif flag_data==2
     load dataplot_currentmaxv2
 elseif flag_data==3
     load dataplot_finalchoice
-elseif flag_data==4
-    load dataplot_finalchoice_composite
 end
 % 
 % u_DS0 = {'CF Com','CF Eco','CF Edu','CF Foo','CF Gov','CF Hea','CF Hou', ...
@@ -64,7 +63,8 @@ for j0=1:length(u_DS0)                                       % for each current 
         if flag_report
             title(sprintf('Cronbach''s alpha = %.2f\n',CAlast),'Fontsize',20)
         else
-            title(sprintf('Cronbach''s alpha = %.2f (%.2f)\n',CAlast,calcAlpha(corre)),'Fontsize',20)
+%             title(sprintf('Cronbach''s alpha = %.2f (%.2f)\n',CAlast,calcAlpha(corre)),'Fontsize',20)
+ title(sprintf('Cronbach''s alpha = %.2f (%.2f)\n',CAlast,fCAlpha(mea_domain, zeros(1,num))),'Fontsize',20)
         end
         
         % set the text of correlation inside the plot matrix 
@@ -95,9 +95,6 @@ saveas(gcf,['figure_maxcurrent/' fig.Name '.fig'])
 elseif flag_data==3
 %     print(['figure_finalchoice/' fig.Name],'-djpeg','-r100')
 saveas(gcf,['figure_finalchoice/' fig.Name '.fig'])
-    elseif flag_data==4
-%     print(['figure_finalchoice_composite/' fig.Name],'-djpeg','-r100')
-saveas(gcf,['figure_finalchoice_composite/' fig.Name '.fig'])
 end
     end
     
@@ -112,3 +109,25 @@ K   = size(corre,1);                             % number of measures
 corrTotal = sum(corre(:));                       % sum of all correlations K^2 terms
 corrOffDiagonal = corrTotal - sum(diag(corre));  % sum of the off-diagonal correlations K*(K-1) terms
 alpha = (corrOffDiagonal/(K-1))/(corrTotal/K);
+
+
+function alp = fCAlpha(Y,Direc0)
+%----------------------------------------------------------------------------------------------
+% Cronbach's alpha
+%----------------------------------------------------------------------------------------------
+global CAcount
+
+CAcount = CAcount + 1;
+
+[ ~,K ] = size(Y);                                 % K = number of components
+Ikeep   = ~isnan(sum(Y,2));                        % get good rows
+Y       = Y(Ikeep,:);                              % keep only good rows
+if K==1, alp = 1; return, end                      % default
+for k=1:K
+    if Direc0(k), Y(:,k) = 1-Y(:,k); end           % change sign, as needed
+    sig(k) = nanvar(Y(:,k));                       % variance of each score
+end
+X       = nanmean(Y,2)*K;                          % total scores
+alp     = K / (K-1) * ( 1 - sum(sig)/nanvar(X) );  % Cronbach's alpha
+if alp>1, keyboard, return, end
+

@@ -5,7 +5,7 @@ function fPlotResultsQi
 flag_use_composites = 1;                         % 1-use composite measures, 0-don't
 if flag_use_composites
 	load('fPrepareMeasuresQiResults_180620.mat')
-	combination = [1 1 1 2 1 1 2];
+	combination = [1 1 1 2 1 1 1 1 1];
 else
 	load fPrepareMeasuresQiResults_no_composites
 	combination = [2 1 18 1 2 1 2 2 1 2 1];
@@ -115,7 +115,7 @@ for i=1:nSubdomains                              % for each measure
         ax.Position(3) = ax_length;
         ax.Position(2) = ax.Position(2) + 0.18;
         xlim([0,nResults]+0.5)
-        ylim([0.1 1])
+        ylim([0.3 1])
         ylabel('                                Cronbach''s alpha')
         set(get(gca,'ylabel'),'rotation',0)
         ax.YAxisLocation = 'right';              % put labels on the right side

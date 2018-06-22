@@ -155,7 +155,7 @@ direct0_current = strcmp(measureList_c.direction, '-');
 for j0=1:m0                                           % for each current subdomain
     non_core_index{j0} = setdiff(I_DS0{j0},core_measures_index{j0});
 end
-
+ttl = measureList_c.description;
 
 for j0=1:m0                                           % for each current subdomain
     temp = strcmp(measureList_c.subdomain, subdomains_new{j0});
@@ -211,9 +211,9 @@ for j0=1:m0                                           % for each current subdoma
         [nrow, ~] = size(combinations);
         for cc = 1:nrow
             count = count + 1;
-            datsub_cur = data_all(:, combinations(nrow, :));
+            datsub_cur = data_all(:, combinations(cc, :));
             %             datasub_noncore = Dat0(:,)
-            datsub = [datsub_core datsub_cur];
+%             datsub = [datsub_core datsub_cur];
             clear ID mea_domain covmatrix corre Id_signs
             [ CAmax_temp(count), Signs_temp{count}] = fCAmaxperm_core(datsub_core, datsub_cur);
             includeSavedtemp = [includeSavedtemp ismember(numchoose, combinations(cc, :))];
@@ -310,6 +310,7 @@ for j0=1:m0
 end
 
 save('fPrepareMeasuresQiResults_180620','u_DS0','includedsSaved','SignsSaved','CAsSaved','ttlSaved','ttl0')
+save('all_data')
 keyboard
 
 
@@ -401,11 +402,11 @@ function [ CAmax,direcmax ] = fCAmaxperm_core(core, peri)
 %----------------------------------------------------------------------------------------------
 % max Cronbach's alpha
 %----------------------------------------------------------------------------------------------
-[n_core, ~] = size(core);
+[~, n_core] = size(core);
 if ~isempty(peri)
     n_dat  = size(peri,2);                          % number of columns
-    n_perm = 2^(n_dat-1);                          % number of permutations
-    CAmaxs = zeros(n_dat,1);                       % initialize
+    n_perm = 2^(n_dat);                          % number of permutations
+    CAmaxs = zeros(n_perm,1);                       % initialize
     direcs = zeros(n_perm,n_dat);
     for jperm=1:n_perm                             % for all permutations
         direcs(jperm,:) = decimalToBinaryVector(jperm-1,n_dat);
