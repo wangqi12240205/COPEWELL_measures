@@ -101,7 +101,7 @@ for j0=1:m0                                           % for each current subdoma
         CX    = nancov(Dat0(:,Is0));                  % get the covariance
         lam   = fCFA( CX );                           % get the loadings
         lam   = lam/(0.5/3);                          % scale to 1
-%         lam   = lam/(sum(abs(lam)));                % scale to 1
+        %         lam   = lam/(sum(abs(lam)));                % scale to 1
         CA    = fCAlpha(Dat0(:,Is0),Direc0max(Is0));  % default Cronbach's alpha
         fprintf('\n%s (%.2f)\n',u_DS0(j0,:),CA)
         %         lam =  lam*sign(lam(1));
@@ -135,7 +135,7 @@ for j0=1:m0                                           % for each current subdoma
         else
             for I0=1:n_DS0(j0)
                 i0 = Is0(I0);
-%                 if strcmp(Signs0(i0), Signs(i0)) & abs(lam(I0)) > min(0.2,1/n_DS0(j0))
+                %                 if strcmp(Signs0(i0), Signs(i0)) & abs(lam(I0)) > min(0.2,1/n_DS0(j0))
                 if strcmp(Signs0(i0), Signs(i0)) & abs(lam(I0)) > 0.19
                     core_measures_index{j0} = [core_measures_index{j0} Is0(I0)];
                 end
@@ -213,7 +213,7 @@ for j0=1:m0                                           % for each current subdoma
             count = count + 1;
             datsub_cur = data_all(:, combinations(cc, :));
             %             datasub_noncore = Dat0(:,)
-%             datsub = [datsub_core datsub_cur];
+            %             datsub = [datsub_core datsub_cur];
             clear ID mea_domain covmatrix corre Id_signs
             [ CAmax_temp(count), Signs_temp{count}] = fCAmaxperm_core(datsub_core, datsub_cur);
             includeSavedtemp = [includeSavedtemp ismember(numchoose, combinations(cc, :))];
@@ -240,7 +240,7 @@ for j0=1:m0                                           % for each current subdoma
             loc = find(inclu_temp ~=0);
             for jj = 1:length(loc)
                 IN = loc(jj);
- 
+                
                 if signs_change(jj)
                     Sign_real(IN) = 1-signs_all(IN);
                 else
@@ -291,7 +291,7 @@ for j0=1:m0                                           % for each current subdoma
     
 end
 
-for j0=1:m0  
+for j0=1:m0
     [numrow, numcol] = size(includedsSaved{j0});
     temp = includedsSaved{j0};
     temp = [ones(length(core_measures_index{j0}),numcol);temp];

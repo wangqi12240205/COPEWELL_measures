@@ -1,18 +1,18 @@
 id,description,domain,subdomain,direction,source
-107,% Ninth graders who graduate in four years (high school graduation rate),CF,Education,+,EDFacts (CHR)
+107,% ninth graders who graduate in four years (high school graduation rate),CF,Education,+,EDFacts (CHR)
 11,# grocery stores per 10k pop,CF,Food and Water,+,"Census, CBP"
 12,# grocery stores per 100 square mile,CF,Food and Water,+,"Census, CBP"
-68,"% Households, no car & > 1 mile to grocery store",CF,Food and Water,-,"USDA, ERS, Food Environment Atlas "
+68,"% households, no car & > 1 mile to grocery store",CF,Food and Water,-,"USDA, ERS, Food Environment Atlas "
 15,Per capita federal government spending ($1k),CF,Government,+,"USDA, ERS, Federal Funds"
 106,"% households has 1 or more of the 4 housing unit problems (lacks kitchen or plumbing, more than 1 person per room, or cost burden greater than 30%)",CF,Housing,-,"HUD, CHAS"
 21,# house units per capita,CF,Housing,+,Census
 108,# of mental health care providers per 10k pop,CF,Healthcare Delivery and Public Health Services,+,CMS (CHR)
 26,% uninsured adults in age group 16 to 64,CF,Healthcare Delivery and Public Health Services,-,"Census, SAHIE"
 104,% adults who are current smokers,CF,Healthcare Delivery and Public Health Services,-,BRFSS (CHR)
-105,% Leisure-time Physical Inactivity Prevalence,CF,Healthcare Delivery and Public Health Services,-,"CDC, Diabetes"
+105,% leisure-time Physical Inactivity Prevalence,CF,Healthcare Delivery and Public Health Services,-,"CDC, Diabetes"
 38,% pop walk or cycle to work,CF,Transportation,+,"Census, ACS"
-44,Average Life expectency,CF,Population Well being,+,GHDx
-103, % Adults with frequent mental distress,CF,Population Well being,-,BRFSS (CHR)
+44,Average Life expectancy,CF,Population Well being,+,GHDx
+103, % adults with frequent mental distress,CF,Population Well being,-,BRFSS (CHR)
 101,Distance to the nearest coast (1000 miles),PM,Natural Systems,+,NOAA
 51,% bridges with structural deficiencies,PM,Engineered Systems,-,FHWA
 48,Average age of housing stock,PM,Engineered Systems,-,"Census, ACS"
@@ -29,6 +29,6 @@ id,description,domain,subdomain,direction,source
 69,% household on public assistance and food stamps,PVID,Deprivation,-,"Census, ACS"
 73,% pop who use carpool to work,SC,Social Cohesion,+,"Census, ACS"
 74,% pop affiliated with religious group,SC,Social Cohesion,+,U.S. Religion Census
-75,# Religious Organizations per 100 square mile,SC,Social Cohesion,+,"Census, CBP"
+75,# religious Organizations per 100 square mile,SC,Social Cohesion,+,"Census, CBP"
 78,# social advocacy organizations per 10k pop,SC,Social Cohesion,+,"Census, CBP"
 102,Total number of FEMA events from 1986-2015,PR,Preparedness,+,FEMA

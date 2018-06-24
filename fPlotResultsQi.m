@@ -5,7 +5,7 @@ function fPlotResultsQi
 flag_use_composites = 1;                         % 1-use composite measures, 0-don't
 if flag_use_composites
 	load('fPrepareMeasuresQiResults_180620.mat')
-	combination = [1 1 1 2 1 1 1 1 1];
+	combination = [1 1 1 2 1 1 1 1 2];
 else
 	load fPrepareMeasuresQiResults_no_composites
 	combination = [2 1 18 1 2 1 2 2 1 2 1];

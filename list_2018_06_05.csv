@@ -13,7 +13,7 @@ id,description,domain,subdomain,direction
 12,Food Environment Index ,CF,Food and Water,+
 13,(C) % population served by public water systems in violation of safe standards,CF,Food and Water,-
 14,% population employed as fire fighting  prevention or law enforcement workers,CF,Government,+
-15,Number of Violent crimes,CF,Government,-
+15,Number of violent crimes,CF,Government,-
 16,Number of property crimes,CF,Government,-
 33,(C) All cause mortality per 10k ,CF,Healthcare Delivery and Public Health Services,-
 17,(C) Number of physicians per 10k,CF,Healthcare Delivery and Public Health Services,+
@@ -21,9 +21,9 @@ id,description,domain,subdomain,direction
 19,(C) % of women aged 67-69 on Medicare with a timely mammogram,CF,Healthcare Delivery and Public Health Services,+
 20,% of population with health insurance,CF,Healthcare Delivery and Public Health Services,+
 21,Mental health providers ratio,CF,Healthcare Delivery and Public Health Services,+
-22,total occupied housing units/households with over 1 person/room,CF,Housing,-
+22,Total occupied housing units/households with over 1 person/room,CF,Housing,-
 23,Housing: Percent homeownership (positive effect),CF,Housing,+
-24,% Severe housing problems ,CF,Housing,-
+24,% severe housing problems ,CF,Housing,-
 25,Population employed in community and social services per 10k,CF,Nurturing and Care,+
 26,(C) Number of nursing homes per 10k,CF,Nurturing and Care,+
 27,Recreational centers and sport organizations,CF,Population Well being,+

@@ -9,7 +9,7 @@ CAcount = 0;
 load('all_data')
 
 load('fPrepareMeasuresQiResults_180620.mat')
-	combination = [1 1 1 2 1 1 1 1 1];
+	combination = [1 1 1 2 1 1 1 1 2];
 
 sub_change  = 1:length(u_DS0);
 for j =1:length(combination)
