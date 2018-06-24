@@ -133,7 +133,7 @@ for j0=1:m0                                           % for each current subdoma
                 i0 = Is0(I0);
                 %                 if strcmp(Signs0(i0), Signs(i0)) & abs(lam(I0)) > min(0.2,1/n_DS0(j0))
                 if strcmp(Signs0(i0), Signs(i0)) & abs(lam(I0)) > 0.19 % core criterion
-                    core_measures_index{j0} = [core_measures_index{j0} Is0(I0)]; % append the core index to the variable
+                    core_measures_index{j0} = [core_measures_index{j0} Is0(I0)]; % append the core index to the 
                 end
             end
         end

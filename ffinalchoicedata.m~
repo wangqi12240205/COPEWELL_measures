@@ -14,24 +14,24 @@ load('fPrepareMeasuresQiResults_180620.mat')
 sub_change  = 1:length(u_DS0);              % choose the subdomain
 for j =1:length(combination)
     sub_id =  sub_change(j);                % subdomain index
-    comb_id = combination(j);               % choose the corresponding combination
-    Inclu   = includedsSaved{sub_id};       % measures of the subdomain
-    include = Inclu(:,comb_id);             % choose the measure combination
-    ttl_temp = ttlSaved{sub_id};            % title
-    ttl_include = ttl_temp(find(include));  % measure titles
-    sign_temp   = SignsSaved{sub_id};       % signs
-    signs_te    = sign_temp(:,comb_id);     % signs
-    signs=  signs_te(find(include));        % signs
-    CAs_te      = CAsSaved{sub_id};         % CA
-    CAs         = CAs_te(comb_id);          % CA
+    comb_id = combination(j);               % cho
+    Inclu   = includedsSaved{sub_id};
+    include = Inclu(:,comb_id);
+    ttl_temp = ttlSaved{sub_id};
+    ttl_include = ttl_temp(find(include));
+    sign_temp   = SignsSaved{sub_id};
+    signs_te    = sign_temp(:,comb_id);
+    signs=  signs_te(find(include));
+    CAs_te      = CAsSaved{sub_id};
+    CAs         = CAs_te(comb_id);
     dat_temp = [];
     for k = 1:sum(include)
-        texttemp = ttl_include{k};          % title
-        textsplit = textscan(texttemp,'%s','Delimiter',':'); % split the title by ,
+        texttemp = ttl_include{k};
+        textsplit = textscan(texttemp,'%s','Delimiter',':');
         if (textsplit{1}{1} == 'N')
-            dat_add = Dat0(:,strcmp(textsplit{1}{2},ttl0));  % data
+            dat_add = Dat0(:,strcmp(textsplit{1}{2},ttl0));
             if signs(k) ~= direc0(strcmp(textsplit{1}{2},ttl0))
-                dat_add = 1-dat_add;                         % change sign
+                dat_add = 1-dat_add;
             end
             dat_temp = [dat_temp dat_add];
         else
